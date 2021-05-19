@@ -1,18 +1,28 @@
 # vim: set filetype=sh:
 # NOTE: require ${ISCE_VERSION}, e.g. in .bash_profile
-echo "source ~/tools/conda_envs/isce2/config.rc"
+echo "source ~/apps/conda_envs/isce2/config.rc"
 
 # root directory
-export TOOL_DIR=~/tools
+export TOOL_DIR=~/apps
 export DATA_DIR=~/data   # data / nobak
 
 if [ -z ${PYTHONPATH+x} ]; then export PYTHONPATH=""; fi
 
-##---------------------- MintPy -----------------------##
+
+##-------------- MintPy / PyAPS / PySolid -------------##
 export MINTPY_HOME=${TOOL_DIR}/MintPy
-export PYTHONPATH=${PYTHONPATH}:${MINTPY_HOME}
+export PYTHONPATH=${PYTHONPATH}:${MINTPY_HOME}:${TOOL_DIR}/PyAPS:${TOOL_DIR}/PySolid
 export PATH=${PATH}:${MINTPY_HOME}/mintpy
 export WEATHER_DIR=${DATA_DIR}/aux
+
+##-------------- ARIA-tools ---------------------------##
+export ARIATOOLS_HOME=${TOOL_DIR}/ARIA-tools/tools
+export PYTHONPATH=${PYTHONPATH}:${ARIATOOLS_HOME}
+export PATH=${PATH}:${ARIATOOLS_HOME}/bin
+
+##-------------- SSARA --------------------------------##
+export PATH=${PATH}:${TOOL_DIR}/utils/SSARA
+
 
 ##---------------------- ISCE2 ------------------------##
 # load required modules for compiling ISCE-2
@@ -27,7 +37,9 @@ echo "load ISCE-2 core modules from "$ISCE_HOME
 # make isce apps/libraries available/importable
 export PATH=${PATH}:${ISCE_ROOT}/install${ISCE_VERSION}/bin
 export PYTHONPATH=${PYTHONPATH}:${ISCE_ROOT}/install${ISCE_VERSION}/packages
+export PYTHONPATH=${PYTHONPATH}:${CONDA_PREFIX}/bin
 #export LD_LIBRARY=${LD_LIBRARY}:${ISCE_ROOT}/install${ISCE_VERSION}/lib
+
 
 # source stack processors and PyCuAmpcor
 export ISCE_STACK=${TOOL_DIR}/isce2/src/isce2/contrib/stack                     #set ISCE_STACK to the dev version
