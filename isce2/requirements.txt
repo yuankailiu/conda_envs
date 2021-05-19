@@ -25,4 +25,3 @@ xorg-libxft
 xorg-libxmu
 xorg-libxrender
 xorg-libxt
-

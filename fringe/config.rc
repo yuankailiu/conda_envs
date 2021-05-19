@@ -1,6 +1,6 @@
 # vim: set filetype=sh:
 
-export FRINGE_HOME=~/tools/FRInGE/install
+export FRINGE_HOME=~/apps/FRInGE/install
 export PATH=$PATH:$ISCE_HOME/bin:$ISCE_HOME/applications:$FRINGE_HOME/bin
 export PYTHONPATH=$PYTHONPATH:$FRINGE_HOME/python
 export LD_LIBRARY_PATH=$FRINGE_HOME/lib
