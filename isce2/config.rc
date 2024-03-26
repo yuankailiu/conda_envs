@@ -1,9 +1,10 @@
 # vim: set filetype=sh:
 # NOTE: require ${ISCE_VERSION}, e.g. in .bash_profile
-echo "source ~/tools/conda-envs/isce2/config.rc"
+#echo "source ~/tools/conda-envs/isce2/config.rc"
+echo "source ${TOOL_DIR}/conda_envs/isce2/config.rc"
 
 # root directory
-export TOOL_DIR=~/tools
+#export TOOL_DIR=~/tools
 export DATA_DIR=~/data   # data / nobak
 
 if [ -z ${PYTHONPATH+x} ]; then export PYTHONPATH=""; fi
@@ -19,14 +20,14 @@ export ARIATOOLS_HOME=${TOOL_DIR}/ARIA-tools/tools
 export PATH=${PATH}:${TOOL_DIR}/utils/SSARA
 
 ##---------------------- isce-proc --------------------##
-export ISCE_PROC_HOME=~/tools/isce-proc
+export ISCE_PROC_HOME=~/${TOOL_DIR}/isce-proc
 export PYTHONPATH=${PYTHONPATH}:${ISCE_PROC_HOME}/src
 export PATH=${PATH}:${ISCE_PROC_HOME}/src/isce_proc
 
 ##---------------------- ISCE2 ------------------------##
-# installed from source 
+# installed from source
 # load required modules for compiling isce2
-module load cuda/11.2
+#module load cuda/11.2
 #module load /home/geomod/apps/rhel7/modules/gcc/7.3.1
 #module load /home/geomod/apps/rhel7/modules/python3/anaconda
 
