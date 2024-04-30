@@ -11,13 +11,15 @@ requests
 scipy
 scikit-image    # for autoRIFT
 #for compilation [cross-platform names from conda-forge]
-c-compiler
-cxx-compiler
-fortran-compiler
+#c-compiler
+#cxx-compiler
+#fortran-compiler
 #for mdx compile/install
-openmotif
-openmotif-dev
-xorg-libxdmcp
-xorg-libxft
-xorg-libxmu
-xorg-libxt
+#openmotif
+#openmotif-dev
+#xorg-libxdmcp
+#xorg-libxft
+#xorg-libxmu
+#xorg-libxt
+#we need pybind11
+pybind11 
