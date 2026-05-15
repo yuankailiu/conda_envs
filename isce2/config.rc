@@ -2,7 +2,7 @@
 # NOTE: require ${ISCE_VERSION}, e.g. in .bash_profile
 
 # root directory
-export TOOL_DIR=~/apps
+export TOOL_DIR=~/Developer
 export DATA_DIR=~/data   # data / nobak
 
 echo "source ${TOOL_DIR}/conda-envs/isce2/config.rc"

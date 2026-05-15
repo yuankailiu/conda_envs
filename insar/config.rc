@@ -1,7 +1,7 @@
 # vim: set filetype=sh:
 
 # root directory
-export TOOL_DIR=~/apps
+export TOOL_DIR=~/Developer
 export DATA_DIR=~/data   # data / nobak
 
 echo "source ${TOOL_DIR}/conda-envs/insar/config.rc"
